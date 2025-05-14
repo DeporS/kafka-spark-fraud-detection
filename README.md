@@ -1,3 +1,3 @@
-# spark-kafka-streaming-demo
+# kafka-spark-fraud-detection
 
 # 
