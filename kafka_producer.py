@@ -56,5 +56,6 @@ if __name__ == '__main__':
 
             # Wait 1 sec before sending next event
             time.sleep(1)
+            
     except KeyboardInterrupt:
         print("Producer stopped.")
