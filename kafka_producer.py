@@ -18,16 +18,16 @@ except Exception as e:
     exit(1)
 
 
-KNOWN_IPS = [f"192.168.1.{i}" for i in range(1, 101)]
+KNOWN_IPS = [f"192.168.1.{i}" for i in range(1, 2)]
 
 def generate_login_events():
     """This function generates realistic login event data"""
-    cities = ["Poznan", "Wroclaw", "Warszawa", "Gdansk", "Krakow"]
+    cities = ["Poznan", "Wroclaw", "Warszawa", "Gdansk", "Krakow", "Berlin", "Moskov", "NYC"]
     devices = ["PC", "Mobile", "Unknown"]
     events = ["login", "logout", "failed_login", "session_timeout"]
     
 
-    city_weights = [1, 1, 3, 1, 2]
+    city_weights = [1, 1, 3, 1, 2, 5, 5, 10]
     device_weights = [1, 5, 0.2]
     event_weights = [5, 3, 2, 2]
 

@@ -10,7 +10,7 @@ def consume_events():
     consumer = KafkaConsumer(
         KAFKA_TOPIC,
         bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
-        auto_offset_reset='latest', # earliest czyta od poczatku
+        auto_offset_reset='latest', # earliest would read everything for the last 7 days (?)
         enable_auto_commit=True,
         group_id='my-consumer-group',
         value_deserializer=lambda x: json.loads(x.decode('utf-8'))
