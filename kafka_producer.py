@@ -18,19 +18,21 @@ except Exception as e:
     exit(1)
 
 
+KNOWN_IPS = [f"192.168.1.{i}" for i in range(1, 101)]
 
 def generate_login_events():
     """This function generates realistic login event data"""
     cities = ["Poznan", "Wroclaw", "Warszawa", "Gdansk", "Krakow"]
     devices = ["PC", "Mobile", "Unknown"]
     events = ["login", "logout", "failed_login", "session_timeout"]
+    
 
     city_weights = [1, 1, 3, 1, 2]
     device_weights = [1, 5, 0.2]
     event_weights = [5, 3, 2, 2]
 
     login_event = {
-        "user_id": random.randint(0, 200),
+        "ip_address": random.choice(KNOWN_IPS),
         "event": random.choices(events, weights=event_weights, k=1)[0],
         "timestamp": datetime.utcnow().isoformat(),
         "device": random.choices(devices, weights=device_weights, k=1)[0],
