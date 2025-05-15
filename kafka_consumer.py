@@ -1,6 +1,7 @@
 from kafka import KafkaConsumer
 import json
-from kafka_producer import topic
+
+from config import KAFKA_TOPIC as topic
 
 
 consumer = KafkaConsumer(
@@ -14,6 +15,6 @@ consumer = KafkaConsumer(
 try:
     for message in consumer:
         print("Received: ", message.value)
-        
+
 except KeyboardInterrupt:
         print("Consumer stopped.")

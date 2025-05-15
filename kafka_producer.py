@@ -4,6 +4,8 @@ import random
 from datetime import datetime
 from kafka import KafkaProducer
 
+from config import KAFKA_TOPIC as topic
+
 
 # Kafka producer
 try:
@@ -15,9 +17,6 @@ except Exception as e:
     print("Kafka not reachable:", e)
     exit(1)
 
-
-# Kafka topic
-topic = "user_events"
 
 
 def generate_login_events():
@@ -56,6 +55,6 @@ if __name__ == '__main__':
 
             # Wait 1 sec before sending next event
             time.sleep(1)
-            
+
     except KeyboardInterrupt:
         print("Producer stopped.")
