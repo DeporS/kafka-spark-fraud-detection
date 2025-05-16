@@ -1,7 +1,11 @@
+import os
+
 KAFKA_TOPIC = "user_events"
 KAFKA_BOOTSTRAP_SERVERS = ['localhost:9093']
 
-MONGO_URI = "mongodb://mongo:27017/"
+host = "mongo" # while working in docker
+#host = "localhost" # while working locally
+MONGO_URI = f"mongodb://{host}:27017/"
 MONGO_DB_NAME = "events"
 MONGO_LOGINS_COLLECTION = "logins"
 MONGO_ALERTS_COLLECTION = "alerts"

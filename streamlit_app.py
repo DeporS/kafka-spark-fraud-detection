@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 
-from db import logins_collection, alerts_collection
+from db import alerts_collection
 
 # App page config
 st.set_page_config(layout="wide")
@@ -21,8 +21,17 @@ if alerts:
     if alert_type != "All":
         df = df[df["type"] == alert_type]
     
-    df = df.rename(columns={"type": "Alert type", "ip_address": "IP Address", "timestamp": "Time", "from": "Previous Location", "to": "Current Location", 
-                            "dominant_device": "Dominant Device", "used_device": "Used Device", "dominance_ratio": "Dominance Ratio", "attempts": "Attempts"})
+    df = df.rename(columns={
+        "type": "Alert Type", 
+        "ip_address": "IP Address", 
+        "timestamp": "Time", "from": 
+        "Previous Location", "to": 
+        "Current Location", 
+        "dominant_device": "Dominant Device", 
+        "used_device": "Used Device", 
+        "dominance_ratio": "Dominance Ratio", 
+        "attempts": "Attempts"
+        })
     
     st.dataframe(df.dropna(axis=1, how="all"))
 else:
