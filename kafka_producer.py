@@ -18,7 +18,7 @@ except Exception as e:
     exit(1)
 
 
-KNOWN_IPS = [f"192.168.1.{i}" for i in range(1, 2)]
+KNOWN_IPS = [f"192.168.1.{i}" for i in range(1, 101)]
 
 def generate_login_events():
     """This function generates realistic login event data"""

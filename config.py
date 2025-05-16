@@ -1,7 +1,7 @@
 KAFKA_TOPIC = "user_events"
 KAFKA_BOOTSTRAP_SERVERS = ['localhost:9093']
 
-MONGO_URI = "mongodb://localhost:27017/"
+MONGO_URI = "mongodb://mongo:27017/"
 MONGO_DB_NAME = "events"
 MONGO_LOGINS_COLLECTION = "logins"
 MONGO_ALERTS_COLLECTION = "alerts"
